@@ -1,0 +1,14 @@
+.card {
+    width: 250px;
+    height: 350px;
+    background: #3c5aa6;
+    color: #f1f1f1;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card .title {
+    text-transform: capitalize;
+}
