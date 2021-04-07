@@ -1,21 +1,27 @@
 .scene {
   width: 300px;
   height: 400px;
-  perspective: 600px;
+  -webkit-perspective: 600px;
+          perspective: 600px;
 }
 
 .card {
   width: 100%;
   height: 100%;
-  transition: transform 1s;
-  transform-style: preserve-3d;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
   cursor: pointer;
   position: relative;
   color: #f1f1f1;
 }
 
 .card.is-flipped {
-  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
 }
 
 .card__face {
@@ -25,35 +31,60 @@
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   border-radius: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-.card__face--front, .card__face--back {
-  background: #2f3336;
-}
-
-.card__face--back {
-  transform: rotateY(180deg);
+.card ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
 }
 
 .card .title {
   text-transform: capitalize;
+  margin-bottom: 0;
+  padding: 0;
 }
 
-.sprite {
+.card .sprite {
   max-width: 200px;
 }
 
-.stats {
+.card .stats {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
-.card__face--back .title {
-  margin-bottom: 0;
-  padding: 0;
+.card__face {
+  -webkit-transition: -webkit-box-shadow 250ms ease;
+  transition: -webkit-box-shadow 250ms ease;
+  transition: box-shadow 250ms ease;
+  transition: box-shadow 250ms ease, -webkit-box-shadow 250ms ease;
+}
+
+.card__face:hover {
+  -webkit-box-shadow: 3px 3px 4px #b19e27;
+          box-shadow: 3px 3px 4px #b19e27;
+}
+
+.card__face--back {
+  background: #2f3336;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
 }
 
 .weight {
@@ -63,12 +94,6 @@
 
 .moves-length {
   padding-left: 1em;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-  width: 100%;
 }
 
 .normal {
@@ -137,4 +162,9 @@ ul {
 
 .fairy {
   background: #ee99ac;
-}/*# sourceMappingURL=Card.css.map */
+}
+
+.dark {
+  background: #705848;
+}
+/*# sourceMappingURL=Card.css.map */

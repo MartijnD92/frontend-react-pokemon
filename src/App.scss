@@ -1,8 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Lobster+Two:wght@700&family=Poppins:wght@400;700&display=swap");
+
 *, *::before, *::after {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+    box-sizing: border-box;
 }
+
 
 body {
   height: 100vh;
@@ -16,7 +17,6 @@ body {
 .pokemon-logo {
   margin-bottom: 1em;
 }
-
 .click-to-flip {
   font-family: "Lobster Two", sans-serif;
   font-size: 2.5rem;
@@ -25,17 +25,10 @@ body {
 }
 
 .container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
   gap: 2em;
 }
 
@@ -48,23 +41,20 @@ body {
   color: #f1f1f1;
   text-transform: uppercase;
   cursor: pointer;
-  -webkit-transition: -webkit-box-shadow 250ms ease;
-  transition: -webkit-box-shadow 250ms ease;
   transition: box-shadow 250ms ease;
-  transition: box-shadow 250ms ease, -webkit-box-shadow 250ms ease;
-}
 
-.page-btn[disabled] {
-  cursor: not-allowed;
-}
+  &[disabled] {
+      cursor: not-allowed;
+  }
 
-.page-btn:hover {
-  -webkit-box-shadow: 2px 3px #333;
-          box-shadow: 2px 3px #333;
+  &:hover {
+      box-shadow: 2px 3px #333;
+  }
 }
 
 .error {
-  color: #333;
-  font-weight: 700;
+    color: #333;
+    font-weight: 700;
 }
-/*# sourceMappingURL=App.css.map */
+
+// TODO: disabled buttons; foutmeldingen

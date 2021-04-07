@@ -30,10 +30,7 @@ function Card({ url }) {
 	return (
 		<div className="scene scene--card">
 			<div
-				// className={`card ${singlePokemon.types
-				// 	?.map((type) => type.type.name)
-				// 	.join(' ')} ${isFlipped ? 'is-flipped' : ''}`}
-				className="card"
+				className={`card ${isFlipped ? 'is-flipped' : ''}`}
 				onClick={() => toggleIsFlipped(!isFlipped)}
 			>
 				<div className={`card__face card__face--front ${singlePokemon.types?.[0].type.name}`}>
