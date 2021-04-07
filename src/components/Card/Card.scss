@@ -45,6 +45,17 @@
     padding: 0;
   }
 
+  .pokedex-id {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: rgba(241, 241, 241, 0.2);
+      font-weight: 500;
+  }
+
   .sprite {
     max-width: 200px;
   }

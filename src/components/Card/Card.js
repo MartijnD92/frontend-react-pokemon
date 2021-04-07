@@ -10,10 +10,11 @@ function Card({ url }) {
 		async function getSinglePokemon() {
 			try {
 				const {
-					data: { name, weight, sprites, abilities, moves, types },
+					data: { name, id, weight, sprites, abilities, moves, types },
 				} = await axios.get(url);
 				setSinglePokemon({
 					name: name,
+                    id: id,
 					weight: weight,
 					image: sprites.other['official-artwork'].front_default,
 					abilities: abilities,
@@ -39,6 +40,7 @@ function Card({ url }) {
 						src={singlePokemon.image}
 						alt={singlePokemon.name}
 					/>
+                    <span className="pokedex-id">#{singlePokemon.id}</span>
 					<h3 className="title">{singlePokemon.name}</h3>
 					<div className="stats">
 						<p className="weight">Weight: {singlePokemon.weight / 10} kg</p>
